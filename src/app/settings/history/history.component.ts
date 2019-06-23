@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-history',
@@ -22,10 +23,12 @@ export class HistoryComponent implements OnInit {
     img: '../../assets/history/4.jpeg',
     label: 'Gengivities - 60%'
   }];
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() { }
 
-
+  takeBackToSettings() {
+    this.router.navigateByUrl('tabs/tabs/tab3');
+  }
 
 }

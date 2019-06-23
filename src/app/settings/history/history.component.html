@@ -1,14 +1,14 @@
 <ion-header no-border>
   <ion-toolbar>
-    <ion-buttons color="primary" slot="start">
-      <ion-icon name="arrow-back"></ion-icon>
+    <ion-buttons color="primary" slot="start" (click)="takeBackToSettings()">
+        <ion-back-button text="" icon="arrow-back"></ion-back-button>
     </ion-buttons>
     <ion-title>
       History
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content style="margin-top: 10px;">
+<ion-content>
   <ion-item *ngFor="let item of history">
     <ion-avatar slot="start"><img [src]="item.img"></ion-avatar>
     <ion-label>

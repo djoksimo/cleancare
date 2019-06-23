@@ -28,17 +28,19 @@
     margin: auto;
     content: url('../assets/logo.png');
     width: 70%;
+    transform: scale(0.65);
 }
 
 .title {
     font-family: 'Avenir LT Std 55 Roman';
-    font-size: 54pt;
+    font-size: 38pt;
     color: #202020;
     text-align: center;
+    font-weight: 600;
 }
 
 .subheading {
-    font-size: 13pt;
+    font-size: 11pt;
     color: #202020;
     font-family: 'Avenir LT Std 55 Roman';
     text-align: center;
@@ -86,4 +88,9 @@ ion-buttons {
   font-size: 24px;
   color: #579FFF;
   padding-left: 20px;
+  padding-right: 20px;
+}
+
+ion-back-button {
+    font-size: 24px;
 }

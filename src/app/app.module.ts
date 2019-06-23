@@ -13,9 +13,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 import { File } from '@ionic-native/file/ngx';
 import { HistoryComponent } from './settings/history/history.component';
+import { ProductsComponent } from './settings/products/products.component';
+import { DentistsComponent } from './settings/dentists/dentists.component';
 
 @NgModule({
-  declarations: [AppComponent, HistoryComponent],
+  declarations: [AppComponent, HistoryComponent, ProductsComponent, DentistsComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
   providers: [
