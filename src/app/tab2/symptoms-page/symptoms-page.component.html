@@ -11,7 +11,10 @@
 <ion-content>
   <ion-list>
     <div *ngFor="let item of resultSet">
-      <ion-item justify-content-between *ngIf="item[0] !== 'web_entities_length'">
+      <ion-item justify-content-between *ngIf="item[0] !== 'web_entities_length' && item[0] !== 'Tooth_enamel' 
+      && item[0] !== 'Tooth' && item[0] !== 'Health' && item[0] !== 'Dental_braces' && item[0] !== 'Tooth_whitening' 
+      && item[0] !== 'Human_tooth' && item[0] !== 'Dentistry' && item[0] !== 'Human_mouth'
+      && item[0] !== 'Gums' && item[0] !== 'Permanent_teeth'">
         {{item[0]}}
         <ion-buttons slot="end">
           {{item[1] * 100 | number}} %

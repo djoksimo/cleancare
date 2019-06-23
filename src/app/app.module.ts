@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { Camera } from '@ionic-native/camera/ngx';
 import { HttpClientModule } from '@angular/common/http';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
+import { File } from '@ionic-native/file/ngx';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -20,7 +22,10 @@ import { FileTransfer } from '@ionic-native/file-transfer/ngx';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     Camera,
-    FileTransfer
+    File,
+    // FileUploadOptions,
+// tslint:disable-next-line: deprecation
+    FileTransfer,
   ],
   bootstrap: [AppComponent]
 })
