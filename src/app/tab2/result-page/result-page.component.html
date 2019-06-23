@@ -13,8 +13,8 @@
 </ion-header>
 <ion-content>
   <ion-img [src]="imageSrc" class="teeth-card"></ion-img>
-  <ion-card class="resultCard" (click)="goToResultBreakdown()">
-    <ion-item>
+  <ion-card class="resultCard" (click)="goToResultBreakdown()" style="border-radius: 8px;">
+    <ion-item lines="none" style="padding-top: 0;">
       {{maxValue[0] }}:
       {{(maxValue[1] * 100 ) | number}} %
       <ion-buttons color="primary" slot="end">
@@ -23,8 +23,8 @@
     </ion-item>
   </ion-card>
 
-  <ion-card style="margin-top: 20px">
-    <ion-segment (ionChange)="changeInSegment()" mode="md">
+  <ion-card style="margin-top: 20px; border-radius: 0;">
+    <ion-segment (ionChange)="changeInSegment()">
       <ion-segment-button value="Products" checked>
         <ion-label>Products</ion-label>
       </ion-segment-button>
@@ -33,54 +33,58 @@
       </ion-segment-button>
     </ion-segment>
   </ion-card>
-  <ion-card *ngIf="!productSegment">
-    <ion-item-divider>
-      <ion-item lines="none">
-        <ion-avatar slot="start">
-          <img src="../../../assets/products/toothbrush image.png">
-        </ion-avatar>
-        <ion-label text-wrap>Colgate Salt Toothpaste<br>
-          Best for {{sortedResultSet[sortedResultSet.length - 2][0] }}<br>
-          <span style="font-size: 80%">best for everyone, buy now ....</span>
-        </ion-label>
-      </ion-item>
-    </ion-item-divider>
-    <ion-item-divider>
-      <ion-item lines="none" style="margin-top: 5px">
-        <ion-avatar slot="start">
-          <img src="../../../assets/products//toothpaste image.png">
-        </ion-avatar>
-        <ion-label text-wrap>Colgate Toothbrush<br>
-          Best for {{sortedResultSet[sortedResultSet.length - 2][0] }}<br>
-          <span style="font-size: 80%">best for everyone, buy now ....</span>
-        </ion-label>
-      </ion-item>
-    </ion-item-divider>
 
-  </ion-card>
-  <ion-card *ngIf="productSegment">
-    <ion-item-divider>
-      <ion-item lines="none">
-        <ion-avatar slot="start">
-          <img src="../../../assets/products/dentist 1.png">
-        </ion-avatar>
-        <ion-label text-wrap>Mr.xyz<br>
-          10 years experience<br>
-          <span style="font-size: 80%">contact now ...</span>
-        </ion-label>
-      </ion-item>
-    </ion-item-divider>
-    <ion-item-divider>
-      <ion-item lines="none" style="margin-top: 5px">
-        <ion-avatar slot="start">
-          <img src="../../../assets/products/dentist 2.png">
-        </ion-avatar>
-        <ion-label text-wrap>Mr.xyz<br>
-          10 years experience<br>
-          <span style="font-size: 80%">contact now ...</span>
-        </ion-label>
-      </ion-item>
-    </ion-item-divider>
-  </ion-card>
+  <ion-list *ngIf="!productSegment">
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="../../../assets/products/toothbrush image.png">
+      </ion-avatar>
+      <ion-label text-wrap><b>Colgate Salt Toothpaste</b><br>
+        Best for {{sortedResultSet[sortedResultSet.length - 2][0] }}<br>
+        <span style="font-size: 80%">best for everyone, buy now ....</span>
+      </ion-label>
+      <ion-button slot="end" fill="clear">
+        <ion-icon name="arrow-forward"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-item style="margin-top: 5px">
+      <ion-avatar slot="start">
+        <img src="../../../assets/products//toothpaste image.png">
+      </ion-avatar>
+      <ion-label text-wrapb><b>Colgate Toothbrush</b><br>
+        Best for {{sortedResultSet[sortedResultSet.length - 2][0] }}<br>
+        <span style="font-size: 80%">best for everyone, buy now ....</span>
+      </ion-label>
+      <ion-button slot="end" fill="clear">
+        <ion-icon name="arrow-forward"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
 
+  <ion-list *ngIf="productSegment">
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="../../../assets/products/dentist 1.png">
+      </ion-avatar>
+      <ion-label text-wrap><b>Mr.xyz</b><br>
+        10 years experience<br>
+        <span style="font-size: 80%">contact now ...</span>
+      </ion-label>
+      <ion-buttons color="primary" slot="end">
+        <ion-icon name="arrow-forward"></ion-icon>
+      </ion-buttons>
+    </ion-item>
+    <ion-item lines="none" style="margin-top: 5px">
+      <ion-avatar slot="start">
+        <img src="../../../assets/products/dentist 2.png">
+      </ion-avatar>
+      <ion-label text-wrap><b>Mr.xyz</b><br>
+        10 years experience<br>
+        <span style="font-size: 80%">contact now ...</span>
+      </ion-label>
+      <ion-buttons color="primary" slot="end">
+        <ion-icon name="arrow-forward"></ion-icon>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
 </ion-content>
