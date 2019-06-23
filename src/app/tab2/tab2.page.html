@@ -1,24 +1,7 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Upload a picture
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-button size="large" color="success" (click)="takePicture()">Smile People</ion-button>
-        <ion-button size="large" color="warning" (click)="testClick()">test</ion-button>
-      </ion-col>
-    </ion-row>
-    Result:
-    <ion-row>
-      <ion-col>
-        <img [src]="currentImage" *ngIf="currentImage">
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-content>
+<ion-grid>
+  <ion-row>
+    <ion-col align-self-center>
+      <ion-progress-bar type="indeterminate"></ion-progress-bar>
+    </ion-col>
+  </ion-row>
+</ion-grid>

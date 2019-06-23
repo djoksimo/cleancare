@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab2Page } from './tab2.page';
+import { PictureModalComponent } from '../tab2/picture-modal/picture-modal.component';
 
 @NgModule({
   imports: [
@@ -12,6 +13,7 @@ import { Tab2Page } from './tab2.page';
     FormsModule,
     RouterModule.forChild([{ path: '', component: Tab2Page }])
   ],
-  declarations: [Tab2Page]
+  declarations: [Tab2Page, PictureModalComponent],
+  entryComponents: [PictureModalComponent]
 })
-export class Tab2PageModule {}
+export class Tab2PageModule { }

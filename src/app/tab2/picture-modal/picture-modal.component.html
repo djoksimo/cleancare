@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="closeModal()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-buttons>
+    <ion-title>
+      Check up
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card class="teeth-card">
+    <ion-img class="teeth-image" src="../../../assets/Teeth.png"></ion-img>
+    <ion-card-header>
+      <ion-card-title style="font-size: 115%">We want to see those pearly whites!</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Take a pic of just your teeth (no selfies, although we're sure you're gorgeous),
+      find out what you're at risk for, and receive a list of recommended products and dentists to visit while you're at
+      it.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content style="text-align: center">
+      <span style="font-size: 60% !important">
+        This is just an informant and we are trying to keep you aware of what's in your mouth, in no way this is a
+        substitue of your dentist.<br>
+      </span>
+
+      <ion-button style="margin-top:16px" slot="primary" color="primary" (click)="takePicture()">
+        Continue
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
