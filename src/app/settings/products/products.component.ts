@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-history',
-  templateUrl: './history.component.html',
-  styleUrls: ['./history.component.scss'],
+  selector: 'app-products',
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.scss'],
 })
-export class HistoryComponent implements OnInit {
+export class ProductsComponent implements OnInit {
+  
   history = [{
     img: '../../assets/history/1.jpeg',
     label: 'Gengivities - 80%'
@@ -23,9 +24,10 @@ export class HistoryComponent implements OnInit {
     img: '../../assets/history/4.jpeg',
     label: 'Gengivities - 60%'
   }];
+
   constructor(private router: Router) { }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   takeBackToSettings() {
     this.router.navigateByUrl('tabs/tabs/tab3');
