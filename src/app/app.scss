@@ -19,6 +19,10 @@
     src: local('Avenir LT Std 55 Roman'), url('../assets/fonts/AvenirLTStd-Roman.woff') format('woff');
 }
 
+* {
+  font-family: 'Avenir LT Std 55 Roman';
+}
+
 .logo {
     padding-top: 15%;
     margin: auto;
@@ -38,4 +42,50 @@
     color: #202020;
     font-family: 'Avenir LT Std 55 Roman';
     text-align: center;
+}
+
+.btn-dark {
+    --background: #579FFF;
+    color: #fff;
+    height: 44px;
+    width: 210px;
+    font-family: 'Avenir LT Std 55 Roman';
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0px 0px 15px #ebebeb;
+    border-radius: 8px;
+}
+
+.btn-light {
+    --background: #fff;
+    color: #579FFF;
+    height: 44px;
+    width: 210px;
+    font-family: 'Avenir LT Std 55 Roman';
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0px 0px 15px #ebebeb;
+    border-radius: 8px;
+}
+
+.button-disabled {
+    box-shadow: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.centered {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+ion-header {
+    color: #202020;
+    margin-top: 5%;
+}
+
+ion-buttons {
+  font-size: 24px;
+  color: #579FFF;
+  padding-left: 20px;
 }
