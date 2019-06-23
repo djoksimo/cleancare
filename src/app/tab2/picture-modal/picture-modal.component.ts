@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, LoadingController } from '@ionic/angular';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { Router } from '@angular/router';
 import { ResultPageComponent } from '../result-page/result-page.component';
@@ -17,7 +17,7 @@ export class PictureModalComponent implements OnInit {
   resultJson;
   constructor(public modalController: ModalController, private camera: Camera,
     public router: Router, public service: UploadImageService, public file: File,
-    public transfer: FileTransfer) {
+    public transfer: FileTransfer, public loadingController: LoadingController) {
 
   }
 
@@ -51,7 +51,7 @@ export class PictureModalComponent implements OnInit {
       // this.imageTaken = imageData;
       // this.imageTaken = 'data:image/jpeg;base64,' + imageData;
       // this.service.uploadImage(this.imageTaken);
-
+      this.presentLoading();
       const fileTransfer: FileTransferObject = this.transfer.create();
       const uploadOpts: FileUploadOptions = {
         fileKey: 'img',
@@ -66,6 +66,7 @@ export class PictureModalComponent implements OnInit {
           const path = imageData.substring(0, imageData.lastIndexOf('/') + 1);
           this.file.readAsDataURL(path, filename).then(res => {
             this.imageTaken = res;
+            this.loadingController.dismiss();
             this.presentResultsModal();
           });
 
@@ -116,6 +117,17 @@ export class PictureModalComponent implements OnInit {
     });
 
     await modal.present();
+  }
+
+
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      message: 'Getting Results...',
+      translucent: true,
+      animated: true,
+
+    });
+    return await loading.present();
   }
 
 }
