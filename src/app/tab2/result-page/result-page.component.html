@@ -15,8 +15,8 @@
   <ion-img [src]="imageSrc" class="teeth-card"></ion-img>
   <ion-card class="resultCard" (click)="goToResultBreakdown()">
     <ion-item>
-      {{sortedResultSet[sortedResultSet.length - 2][0] }}:
-      {{(sortedResultSet[sortedResultSet.length - 2][1] * 100 ) | number}} %
+      {{maxValue[0] }}:
+      {{(maxValue[1] * 100 ) | number}} %
       <ion-buttons color="primary" slot="end">
         <ion-icon name="arrow-forward"></ion-icon>
       </ion-buttons>

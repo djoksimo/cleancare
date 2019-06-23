@@ -22,7 +22,20 @@ export class ResultPageComponent implements OnInit {
 
   ngOnInit() {
     this.sortedResultSet = this.sortProperties(this.resultSet);
-    console.log(this.sortedResultSet);
+    var found = false;
+    var index = this.sortedResultSet.length - 2;
+    while (!found) {
+      this.maxValue = this.sortedResultSet[index];
+      let item = this.maxValue;
+      if (!(item[0] !== 'web_entities_length' && item[0] !== 'Tooth_enamel'
+        && item[0] !== 'Tooth' && item[0] !== 'Health' && item[0] !== 'Dental_braces' && item[0] !== 'Tooth_whitening'
+        && item[0] !== 'Human_tooth' && item[0] !== 'Dentistry' && item[0] !== 'Human_mouth'
+        && item[0] !== 'Gums' && item[0] !== 'Permanent_teeth')) {
+        index = index - 1;
+      } else {
+        found = true;
+      }
+    }
   }
 
 
