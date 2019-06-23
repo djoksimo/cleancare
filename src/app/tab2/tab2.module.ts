@@ -14,6 +14,7 @@ import { PictureModalComponent } from '../tab2/picture-modal/picture-modal.compo
     RouterModule.forChild([{ path: '', component: Tab2Page }])
   ],
   declarations: [Tab2Page, PictureModalComponent],
-  entryComponents: [PictureModalComponent]
+  entryComponents: [PictureModalComponent],
+  exports:[PictureModalComponent]
 })
 export class Tab2PageModule { }

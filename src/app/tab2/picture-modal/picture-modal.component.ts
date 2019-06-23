@@ -21,7 +21,7 @@ export class PictureModalComponent implements OnInit {
 
   closeModal(){
     this.modalController.dismiss();
-    this.router.navigateByUrl('/tabs/tab1');
+    this.router.navigateByUrl('/tabs/tabs/tab1');
   }
 
 
