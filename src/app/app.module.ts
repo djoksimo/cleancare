@@ -12,9 +12,10 @@ import { Camera } from '@ionic-native/camera/ngx';
 import { HttpClientModule } from '@angular/common/http';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 import { File } from '@ionic-native/file/ngx';
+import { HistoryComponent } from './settings/history/history.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HistoryComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
   providers: [
