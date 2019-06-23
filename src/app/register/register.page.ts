@@ -19,7 +19,7 @@ export class RegisterPage implements OnInit {
 
   }
 
-  async register(from) {
+  async register(form) {
     const loading = await this.loadingCtrl.create({
       duration: 500
     });

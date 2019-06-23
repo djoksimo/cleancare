@@ -1,18 +1,14 @@
 .radial-progress {
-  $circle-size: 150px;
-  $circle-background: #d6dadc;
-  $circle-color: tomato;
-  $inset-size: 120px;
+  $circle-size: 250px;
+  $circle-color: #579FFF;
+  $inset-size: 175px;
   $inset-color: #fbfbfb;
-  $transition-length: 1s;
-  $shadow: 6px 6px 10px rgba(0,0,0,0.2);
-  $percentage-color: tomato;
-  $percentage-font-size: 22px;
+  $percentage-color: #579FFF;
+  $percentage-font-size: 50px;
 
   cursor: pointer;
   width: $circle-size;
   height: $circle-size;
-  background-color: $circle-background;
   border-radius: 50%;
 
   .circle {
@@ -23,18 +19,11 @@
       height: $circle-size;
       position: absolute;
       border-radius: 50%;
-    }
-
-    .shadow {
-      box-shadow: $shadow inset;
+      font-size: 50px;
     }
 
     .fill,
     .mask {
-      -webkit-backface-visibility: hidden;
-      transition: -webkit-transform $transition-length;
-      transition: -ms-transform $transition-length;
-      transition: transform $transition-length;
       border-radius: 50%;
     }
 
@@ -56,15 +45,12 @@
     margin-top: ($circle-size - $inset-size)/2;
     background-color: $inset-color;
     border-radius: 50%;
-    box-shadow: $shadow;
 
     .percentage {
       width: 100%;
       position: absolute;
       top: ($inset-size - $percentage-font-size) / 2;
-      line-height: 1;
       text-align: center;
-      font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
       color: $percentage-color;
       font-weight: 800;
       font-size: $percentage-font-size;
@@ -75,4 +61,28 @@
 .centered {
   margin-right: auto;
   margin-left: auto;
+}
+
+ion-grid {
+  margin-top: 30%;
+}
+
+ion-header {
+  color: #202020;
+  margin-top: 5%;
+}
+
+.details {
+  font-size: 14px;
+  color:  #c4c4c4;
+  text-align: center;
+  padding-top: 30px;
+}
+
+* {
+  font-family: 'Avenir LT Std 55 Roman', 'arial', sans-serif;
+}
+
+ion-button {
+  --background: #579FFF;
 }
