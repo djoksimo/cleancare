@@ -1,0 +1,28 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons color="primary" slot="start" (click)="closeModal()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-buttons>
+    <ion-title>
+      Symptoms
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <div *ngFor="let item of resultSet">
+      <ion-item justify-content-between *ngIf="item[0] !== 'web_entities_length'">
+        {{item[0]}}
+        <ion-buttons slot="end">
+          {{item[1] * 100 | number}} %
+        </ion-buttons>
+      </ion-item>
+    </div>
+  </ion-list>
+  <ion-footer style="margin-bottom: 20px !important;">
+    <ion-item lines="none" style="font-size: 60%; font-style: italic">
+      These results are just an informant and should not be taken as fact, take this information to your dentist in your
+      next appointment.
+    </ion-item>
+  </ion-footer>
+</ion-content>

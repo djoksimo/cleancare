@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { NavParams, ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import * as _ from 'lodash';
+import { SymptomsPageComponent } from '../symptoms-page/symptoms-page.component';
 
 @Component({
   selector: 'app-result-page',
@@ -35,8 +36,8 @@ export class ResultPageComponent implements OnInit {
     this.router.navigateByUrl('/tabs/tabs/tab1');
   }
 
-  gotToResultBreakdown() {
-
+  goToResultBreakdown() {
+    this.presentResultsModal();
   }
 
   changeInSegment() {
@@ -59,6 +60,23 @@ export class ResultPageComponent implements OnInit {
       return a[1] - b[1]; // compare numbers
     });
     return sortable; // array in format [ [ key1, val1 ], [ key2, val2 ], ... ]
+  }
+
+
+  async presentResultsModal() {
+    const modal: HTMLIonModalElement =
+      await this.modalController.create({
+        component: SymptomsPageComponent,
+        animated: true,
+        componentProps: {
+          resultSet: this.sortedResultSet
+        }
+      });
+
+    modal.onDidDismiss().then((detail) => {
+    });
+
+    await modal.present();
   }
 
 
