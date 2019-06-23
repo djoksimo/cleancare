@@ -1,0 +1,19 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons color="primary" slot="start">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-buttons>
+    <ion-title>
+      History
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content style="margin-top: 10px;">
+  <ion-item *ngFor="let item of history">
+    <ion-avatar slot="start"><img [src]="item.img"></ion-avatar>
+    <ion-label>
+      <h3>{{item.label}}</h3>
+      <p>May 20, 2019</p>
+    </ion-label>
+  </ion-item>
+</ion-content>
