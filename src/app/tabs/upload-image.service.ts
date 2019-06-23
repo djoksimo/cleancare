@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { of } from 'rxjs';
+import { pathToFileURL } from 'url';
 
 
 @Injectable({
@@ -11,19 +13,19 @@ export class UploadImageService {
 
   sendLogs(text) {
     console.log('should hit server');
-    return this.http.post('http://localhost:4000/logs', text);
+    return of(true);
   }
 
 
   test(input) {
     console.log('hitting the service');
     console.log(input);
-    return this.http.get('http://localhost:5000');
+    return of(true);
   }
 
 
   uploadImage(text) {
     console.log(text);
-    return this.http.post('http://localhost:5000/uploadText/', text);
+    return of(true);
   }
 }

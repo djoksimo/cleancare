@@ -22,7 +22,7 @@ export class PictureModalComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('it came in');
+    console.log('Camera opening up.');
   }
 
   closeModal() {
@@ -71,6 +71,7 @@ export class PictureModalComponent implements OnInit {
           });
 
         }, (err) => {
+          this.loadingController.dismiss();
           console.log(err);
         });
 
