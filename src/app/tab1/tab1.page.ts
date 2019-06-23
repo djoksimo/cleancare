@@ -20,12 +20,7 @@ export class Tab1Page {
 
   timeInSeconds: number;
   timer: CountdownTimer;
-  private increment;
-  private transform;
-  private percent;
-  private fixTransform;
   constructor(
-    private sanitizer: DomSanitizer,
     public toastController: ToastController
   ) { }
 
@@ -46,17 +41,9 @@ export class Tab1Page {
     this.presentToast(false);
     return this.timer.hasFinished;
   }
-  initProgressBar() {
-    this.percent = 100;
-    this.increment = 180 / 100;
-    const progress = 'rotate(' + this.increment * this.percent + 'deg)';
-    this.transform = this.sanitizer.bypassSecurityTrustStyle(progress);
-    this.fixTransform = this.sanitizer.bypassSecurityTrustStyle(progress);
-  }
 
   initTimer() {
     this.timeInSeconds = 120;
-    this.initProgressBar();
     if (!this.timeInSeconds) { this.timeInSeconds = 0; }
 
     this.timer = <CountdownTimer>{
@@ -66,7 +53,6 @@ export class Tab1Page {
       hasFinished: false,
       secondsRemaining: this.timeInSeconds
     };
-
     this.timer.displayTime = this.getSecondsAsDigitalClock(this.timer.secondsRemaining);
   }
 
@@ -81,7 +67,7 @@ export class Tab1Page {
   }
 
   startTimer() {
-    this.presentToast(true);
+    if (this.timeInSeconds === 120) this.presentToast(true);
     this.timer.hasStarted = true;
     this.timer.runTimer = true;
     this.timerTick();
@@ -100,11 +86,6 @@ export class Tab1Page {
       if (!this.timer.runTimer) { return; }
       this.timer.secondsRemaining--;
       this.timer.displayTime = this.getSecondsAsDigitalClock(this.timer.secondsRemaining);
-      this.percent = this.timer.secondsRemaining / this.timer.seconds * 100;
-      this.increment = 180 / 100;
-      const progress = 'rotate(' + this.increment * this.percent + 'deg)';
-      this.transform = this.sanitizer.bypassSecurityTrustStyle(progress);
-      this.fixTransform = this.sanitizer.bypassSecurityTrustStyle(progress);
       if (this.timer.secondsRemaining > 0) {
         this.timerTick();
       } else {
@@ -123,6 +104,9 @@ export class Tab1Page {
     minutesString = (minutes < 10) ? '0' + minutes : minutes.toString();
     secondsString = (seconds < 10) ? '0' + seconds : seconds.toString();
     return minutesString + ':' + secondsString;
+  }
+
+  updateValue($event: any) {
   }
   
 }

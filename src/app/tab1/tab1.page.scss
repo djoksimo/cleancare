@@ -1,75 +1,5 @@
-.radial-progress {
-  $circle-size: 250px;
-  $circle-color: #579FFF;
-  $inset-size: 175px;
-  $inset-color: #fbfbfb;
-  $percentage-color: #579FFF;
-  $percentage-font-size: 50px;
-
-  cursor: pointer;
-  width: $circle-size;
-  height: $circle-size;
-  border-radius: 50%;
-
-  .circle {
-    .fill,
-    .mask,
-    .shadow {
-      width: $circle-size;
-      height: $circle-size;
-      position: absolute;
-      border-radius: 50%;
-      font-size: 50px;
-    }
-
-    .fill,
-    .mask {
-      border-radius: 50%;
-    }
-
-    .mask {
-      clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
-
-      .fill {
-        clip: rect(0px, $circle-size/2, $circle-size, 0px);
-        background-color: $circle-color;
-      }
-    }
-  }
-
-  .inset {
-    width: $inset-size;
-    height: $inset-size;
-    position: absolute;
-    margin-left: ($circle-size - $inset-size)/2;
-    margin-top: ($circle-size - $inset-size)/2;
-    background-color: $inset-color;
-    border-radius: 50%;
-
-    .percentage {
-      width: 100%;
-      position: absolute;
-      top: ($inset-size - $percentage-font-size) / 2;
-      text-align: center;
-      color: $percentage-color;
-      font-weight: 800;
-      font-size: $percentage-font-size;
-    }
-  }
-}
-
-.centered {
-  margin-right: auto;
-  margin-left: auto;
-}
-
 ion-grid {
-  margin-top: 30%;
-}
-
-ion-header {
-  color: #202020;
-  margin-top: 5%;
+  margin-top: 15%;
 }
 
 .details {
@@ -83,6 +13,22 @@ ion-header {
   font-family: 'Avenir LT Std 55 Roman', 'arial', sans-serif;
 }
 
-ion-button {
-  --background: #579FFF;
+.restart {
+  padding-top: 70px; 
+}
+
+.displayTime {
+  top: 50%;
+  bottom: auto;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  font-size: 50px;
+  position: absolute;
+  color: #579FFF;
+  font-weight: 800;
+}
+
+.progress-wrapper {
+  position: relative;
+  margin: 20px auto;
 }

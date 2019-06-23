@@ -11,27 +11,35 @@
 <ion-content>
   <ion-card class="teeth-card">
     <ion-img class="teeth-image" src="../../../assets/Teeth.png"></ion-img>
-    <ion-card-header>
-      <ion-card-title style="font-size: 115%">We want to see those pearly whites!</ion-card-title>
-    </ion-card-header>
+    <div style="padding-left: 15px; padding-right: 15px;">
+      <div style="text-align: center">
+        <ion-card-header>
+          <ion-card-title style="font-size: 30px">show me your teeth!</ion-card-title>
+        </ion-card-header>
+      </div>
 
-    <ion-card-content>
-      Take a pic of just your teeth (no selfies, although we're sure you're gorgeous),
-      find out what you're at risk for, and receive a list of recommended products and dentists to visit while you're at
-      it.
-    </ion-card-content>
+      <ion-card-content>
+        Take a pic of just your teeth,
+        find out what you're at risk for, and receive a list of recommended products and dentists to visit while you're
+        at
+        it.
+      </ion-card-content>
+    </div>
   </ion-card>
 
   <ion-card>
-    <ion-card-content style="text-align: center">
-      <span style="font-size: 60% !important">
-        This is just an informant and we are trying to keep you aware of what's in your mouth, in no way this is a
-        substitue of your dentist.<br>
-      </span>
-
-      <ion-button style="margin-top:16px" slot="primary" color="primary" (click)="takePicture()">
-        Continue
-      </ion-button>
+    <ion-card-content>
+      <div style="padding-left: 15px; padding-right: 15px;">
+        <span style="font-size: 60% !important; text-align: left">
+          This is just an informant and we are trying to keep you aware of what's in your mouth, in no way this is a
+          substitue of your dentist.<br>
+        </span>
+      </div>
+      <div style="text-align: center">
+        <ion-button class="btn-dark" style="margin-top:16px" (click)="takePicture()">
+          continue
+        </ion-button>
+      </div>
     </ion-card-content>
   </ion-card>
 
