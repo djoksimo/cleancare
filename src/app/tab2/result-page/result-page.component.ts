@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NavParams, ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import * as _ from 'lodash';
+import * as _  from 'lodash';
 import { SymptomsPageComponent } from '../symptoms-page/symptoms-page.component';
 
 @Component({
@@ -27,10 +27,10 @@ export class ResultPageComponent implements OnInit {
     while (!found) {
       this.maxValue = this.sortedResultSet[index];
       let item = this.maxValue;
-      if (!(item[0] !== 'web_entities_length' && item[0] !== 'Tooth_enamel'
-        && item[0] !== 'Tooth' && item[0] !== 'Health' && item[0] !== 'Dental_braces' && item[0] !== 'Tooth_whitening'
-        && item[0] !== 'Human_tooth' && item[0] !== 'Dentistry' && item[0] !== 'Human_mouth'
-        && item[0] !== 'Gums' && item[0] !== 'Permanent_teeth')) {
+      if (!(item[0] !== 'web entities length' && item[0] !== 'Tooth enamel'
+        && item[0] !== 'Tooth' && item[0] !== 'Health' && item[0] !== 'Dental braces' && item[0] !== 'Tooth whitening'
+        && item[0] !== 'Human tooth' && item[0] !== 'Dentistry' && item[0] !== 'Human mouth'
+        && item[0] !== 'Gums' && item[0] !== 'Permanent teeth')) {
         index = index - 1;
       } else {
         found = true;
@@ -65,7 +65,7 @@ export class ResultPageComponent implements OnInit {
     const sortable = [];
     for (const key in obj) {
       if (obj.hasOwnProperty(key)) {
-        sortable.push([key, obj[key]]); // each item is an array in format [key, value]
+        sortable.push([key.replace(/_/g, ' '), obj[key]]); // each item is an array in format [key, value]
       }
     }
     // sort items by value
