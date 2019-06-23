@@ -36,6 +36,8 @@ export class LoginPage implements OnInit {
 
     await alert.present();
 
+    this.router.navigateByUrl('/tabs/tabs/tab1');
+
   }
 
 }
