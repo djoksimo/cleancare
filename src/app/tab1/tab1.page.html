@@ -10,36 +10,26 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <div class="radial-progress centered" data-progress="0" (click)="toggleTimer()">
-          <div class="circle">
-            <div class="mask full" [style.transform]="transform">
-              <div class="fill" [style.transform]="transform"></div>
-            </div>
-            <div class="mask half">
-              <div class="fill" [style.transform]="transform"></div>
-              <div class="fill fix" [style.transform]="fixTransform"></div>
-            </div>
-            <div class="shadow"></div>
+        <div class="progress-wrapper">
+          <div class="displayTime">
+            {{timer.displayTime}}
           </div>
-          <div class="inset">
-            <div class="percentage">
-              <div>{{timer.displayTime}}</div>
-            </div>
-          </div>
+          <round-progress class="centered" (click)="toggleTimer()" [current]="timer.secondsRemaining"
+            [max]="timer.seconds" [color]="'#579fff'" [background]="'#fafafa'" [radius]="150" [stroke]="35"
+            [semicircle]="false" [rounded]="true" [clockwise]="true" [responsive]="false" [duration]="1100"
+            [animation]="'easeInOutQuart'" [animationDelay]="0" (onRender)="updateValue($event)">
+          </round-progress>
+
         </div>
-        <button ion-button *ngIf="!timeInSeconds || timeInSeconds == 0" large block clear class="timer-button">Timer set
-          up incorrectly</button>
         <div class="details">tap the screen to start & pause</div>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
         <ion-item *ngIf="timeInSeconds && timeInSeconds > 0" lines="none">
-          <div class="centered">
-            <ion-button clear class="large" (click)="initTimer()" item-start
-              *ngIf="!timer.runTimer && (timer.hasStarted || timer.hasFinished) || timer.hasFinished">
-              <ion-icon name="refresh"></ion-icon>
-              Restart
+          <div class="restart centered">
+            <ion-button clear class="large btn-light" (click)="initTimer()" item-start [disabled]="!(!timer.runTimer && (timer.hasStarted || timer.hasFinished) || timer.hasFinished)">
+              restart
             </ion-button>
           </div>
         </ion-item>
