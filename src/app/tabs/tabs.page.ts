@@ -21,14 +21,6 @@ export class TabsPage {
   }
 
   async presentModal() {
-    // console.log('it is coming in the call function');
-    // const modal = await this.modalController.create({
-    //   component: PictureModalComponent,
-    //   animated: true
-    // });
-    // const { data } = await modal.onDidDismiss();
-    // console.log(data);
-    // return await modal.present();
     const modal: HTMLIonModalElement =
       await this.modalController.create({
         component: PictureModalComponent,
