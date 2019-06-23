@@ -1,7 +1,13 @@
 <ion-content padding>
-  <div class="logo">
-    <img alt="logo" src="../../assets/logo_login.jpeg">
-  </div>
+  <ion-grid class="centered">
+    <ion-row justify-content-center>
+      <ion-col align-self-center>
+        <div class="logo"></div>
+        <div class="title">cleancare</div>
+        <div class="subheading">dental checkup without the headache.</div>
+      </ion-col>
+    </ion-row>
+    </ion-grid>
   <form #form="ngForm" (ngSubmit)="login(form)">
     <ion-grid>
       <ion-row color="primary" justify-content-center>

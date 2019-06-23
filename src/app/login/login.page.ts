@@ -19,7 +19,7 @@ export class LoginPage implements OnInit {
 
   }
 
-  async login(from) {
+  async login(form) {
     const loading = await this.loadingCtrl.create({
       duration: 500
     });
@@ -27,14 +27,6 @@ export class LoginPage implements OnInit {
     await loading.present();
 
     loading.onDidDismiss();
-
-    const alert = await this.alertCtrl.create({
-      header: 'Logged In!',
-      message: 'Thanks for logging in.',
-      buttons: ['Dismiss']
-    });
-
-    await alert.present();
 
     this.router.navigateByUrl('/tabs/tabs/tab1');
 

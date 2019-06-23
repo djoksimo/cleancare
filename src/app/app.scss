@@ -4,3 +4,38 @@
 // styles are for the entire app and not just one component. Additionally, this 
 // file can hold Sass mixins, functions, and placeholder classes to be imported 
 // and used throughout the application.
+
+@font-face {
+    font-family: 'Futura Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura Medium'), url('../assets/fonts/Futura-Medium.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'Avenir LT Std 55 Roman';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Avenir LT Std 55 Roman'), url('../assets/fonts/AvenirLTStd-Roman.woff') format('woff');
+}
+
+.logo {
+    padding-top: 15%;
+    margin: auto;
+    content: url('../assets/logo.png');
+    width: 70%;
+}
+
+.title {
+    font-family: 'Avenir LT Std 55 Roman';
+    font-size: 54pt;
+    color: #202020;
+    text-align: center;
+}
+
+.subheading {
+    font-size: 13pt;
+    color: #202020;
+    font-family: 'Avenir LT Std 55 Roman';
+    text-align: center;
+}
